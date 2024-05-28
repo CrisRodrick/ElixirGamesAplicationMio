@@ -39,18 +39,7 @@ android {
 }
 
 dependencies {
-    val lifecycle_version = "2.8.0"
-    //MVVM
-    //ViewModel
-    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version")
-    // LiveData
-    implementation("androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version")
 
-    //Retrofit
-    implementation ("com.squareup.retrofit2:retrofit:2.11.0")
-    //Convertor Gson)
-    implementation ("com.google.code.gson:gson:2.11.0")
-    implementation ("com.squareup.retrofit2:converter-gson:2.11.0")
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
@@ -60,4 +49,18 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+
+    //MVVM viewmodel
+    val lifecycle_version = "2.8.0"
+    // ViewModel
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version")
+    // LiveData
+    implementation("androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version")
+    // Retrofit
+    implementation ("com.squareup.retrofit2:retrofit:2.11.0")
+    // Conversor gson y factory
+    implementation ("com.google.code.gson:gson:2.11.0")
+    implementation ("com.squareup.retrofit2:converter-gson:2.9.0")
+    // Picasso
+    implementation ("com.squareup.picasso:picasso:2.8")
 }
