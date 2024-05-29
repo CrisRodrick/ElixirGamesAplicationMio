@@ -39,21 +39,27 @@ class VideoGameAdapter: RecyclerView.Adapter<VideoGameAdapter.ViewHolder>() {
     inner class ViewHolder (private var binding: GameItemBinding): RecyclerView.ViewHolder(binding.root){
         //se crea la funcion en rojo en onBindViewHoldel
       //  private val imageView: ImageView = binding.img_videoGame
-        fun bindVideoGame(img_videoGame: VideoGameResponse){
-            binding.img_videoGame.setImageResource(0)
+        fun bindVideoGame(viewvideoGame: VideoGameResponse){
+            binding.viewvideoGame.setImageResource(0)
             Picasso.get()
-                .load(img_videoGame.backgroundImage)
+                .load(viewvideoGame.backgroundImage)
                 .centerCrop()
                 .fit()
-                .into(binding.img_videoGame)
+                .into(binding.viewvideoGame)
 
             //entre () salia url, se cambio
             // .resize(50, 50)  se lo saco y en .into(imageView) lo reemplazo
             //Picasso fue obtenido en la web
 
-            binding.txtNameVideoGame.text= videoGame.name
-            binding.txtReleasedVideoGame.text= videoGame.released
-            binding.txtRatingVideoGame.text= videoGame.rating.toString()
+            binding.txtNameVideoGame.text= viewvideoGame.name
+            binding.txtReleasedVideoGame.text= viewvideoGame.released
+            binding.txtRatingVideoGame.text= viewvideoGame.rating.toString()
+
+            //asegurate de que los parámetros de que los parametros de layout no cambien inesperadamente
+            //con esto me aseguro que las imagenes se vean todas y no falte alguna por lo pesadas
+            val layoutParams = binding.root.layoutParams as RecyclerView.LayoutParams
+            layoutParams.height = RecyclerView.LayoutParams.WRAP_CONTENT
+            binding.root.layoutParams = layoutParams
 
         }
     }
