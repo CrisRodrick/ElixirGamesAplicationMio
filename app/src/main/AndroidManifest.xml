@@ -15,10 +15,11 @@
         android:theme="@style/Theme.ElixirGamesAppMio"
         tools:targetApi="31">
         <activity
-            android:name=".GameItemActivity"
+            android:name=".presentation.view.detailvg.DetailActivity"
             android:exported="false" />
+
         <activity
-            android:name=".presentation.view.MainActivity"
+            android:name=".presentation.view.listvg.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -2,4 +2,8 @@
     <string name="app_name">ElixirGamesAppMio</string>
     <string name="nombreJuego">Nombre juego</string>
     <string name="nombre_juego">Nombre Juego</string>
+    <string name="envia_mail">Quiero este juego</string>
+    <string name="game">Grand Theft Auto V</string>
+    <string name="critica_rating">Valoración de la crítica</string>
+    <string name="price">Precio Normal</string>
 </resources>

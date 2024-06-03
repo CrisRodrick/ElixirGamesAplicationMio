@@ -1,27 +1,26 @@
-package com.example.elixirgamesappmio.presentation.view
+package com.example.elixirgamesappmio.presentation.view.listvg
 
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.elixirgamesappmio.R
 import com.example.elixirgamesappmio.data.network.api.VideoGameService
 import com.example.elixirgamesappmio.data.network.retrofit.RetrofitHelper
 import com.example.elixirgamesappmio.data.repository.VideoGameImpl
-import com.example.elixirgamesappmio.data.repository.VideoGameRepository
 import com.example.elixirgamesappmio.databinding.ActivityMainBinding
 import com.example.elixirgamesappmio.domain.VideoGameUseCase
-import com.example.elixirgamesappmio.presentation.viewModel.VideoGameViewModel
-import com.example.elixirgamesappmio.presentation.viewModel.ViewModelFactory
-
-private lateinit var binding : ActivityMainBinding
+import com.example.elixirgamesappmio.presentation.viewModel.listvg.VideoGameViewModel
+import com.example.elixirgamesappmio.presentation.viewModel.listvg.ViewModelFactory
 
 class MainActivity : AppCompatActivity() {
+
+    private lateinit var binding: ActivityMainBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         //setContentView(R.layout.activity_main)
-        binding= ActivityMainBinding.inflate(layoutInflater)
+        binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         //aqui se pasan capa por capa

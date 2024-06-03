@@ -1,4 +1,4 @@
-package com.example.elixirgamesappmio.presentation.viewModel
+package com.example.elixirgamesappmio.presentation.viewModel.listvg
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel

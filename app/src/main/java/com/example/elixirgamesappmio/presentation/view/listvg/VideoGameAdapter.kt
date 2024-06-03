@@ -1,10 +1,8 @@
-package com.example.elixirgamesappmio.presentation.view
+package com.example.elixirgamesappmio.presentation.view.listvg
 
 import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import android.widget.ImageView
-import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.elixirgamesappmio.data.response.VideoGameResponse
 import com.example.elixirgamesappmio.databinding.GameItemBinding
@@ -20,12 +18,12 @@ class VideoGameAdapter: RecyclerView.Adapter<VideoGameAdapter.ViewHolder>() {
             this.notifyDataSetChanged()
         }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): VideoGameAdapter.ViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val binding = GameItemBinding.inflate(LayoutInflater.from(parent.context),parent,false)
         return ViewHolder(binding)
     }
 
-    override fun onBindViewHolder(holder: VideoGameAdapter.ViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         //este es el que pinta junta al viewHolder que se creara luego (por eso estaban en rojo)
         //se crea como Inner Class
         val videoGame = videoGames[position]

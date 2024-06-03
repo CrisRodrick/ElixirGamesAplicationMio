@@ -2,6 +2,7 @@ package com.example.elixirgamesappmio.data.repository
 
 import com.example.elixirgamesappmio.data.network.api.VideoGameApiClient
 import com.example.elixirgamesappmio.data.network.api.VideoGameService
+import com.example.elixirgamesappmio.data.response.VideoGameDetailRespose
 import com.example.elixirgamesappmio.data.response.VideoGameResponse
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
@@ -13,6 +14,14 @@ class VideoGameImpl (private var apiservice: VideoGameService): VideoGameReposit
         return withContext(Dispatchers.IO){    //context lineas de entrada I y salida O
             val listVideoGames = apiservice.getAllVideoGames()
             listVideoGames
+        }
+    }
+
+    override suspend fun fetchVideoGameById(idVideoGameService: Long): VideoGameDetailRespose {
+        //lo mismo de arriba, aplico corrutina
+        return withContext(Dispatchers.IO){
+            val videoGameDetail = apiservice.getVideoGameById(idVideoGameService)
+            videoGameDetail
         }
     }
 
